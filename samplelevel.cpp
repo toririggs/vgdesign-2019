@@ -333,7 +333,6 @@ class MyGame:public Game {
 			sprites[i]->update(dt);
 	}
 	void render() {
-		for (int x=200;x<1146;x++) {
 			SDL_Renderer *renderer=getRenderer();
 			SDL_RenderPresent(renderer);
 			background->render(this);
@@ -360,7 +359,7 @@ class MyGame:public Game {
 			sphere->render(this,passX,passY);
 			count++;
 			SDL_RenderPresent(renderer);
-		}	
+		
 	}
 	bool collision (int objX, int objY, int objW, int objH, int wallX, int wallY, int wallW, int wallH, string direction) 
 	{
