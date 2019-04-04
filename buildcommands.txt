@@ -1,0 +1,5 @@
+Build commands: 
+
+g++ -I C:\Users\lolak\Desktop\SDL2-2.0.9\x86_64-w64-mingw32\include\SDL2 -g -c %f  (Compile)
+
+g++ -I C:\Users\lolak\Desktop\SDL2-2.0.9\x86_64-w64-mingw32\include\SDL2 -L C:\Users\lolak\Desktop\SDL2-2.0.9\x86_64-w64-mingw32\lib -g -o %e %f -lmingw32 -lSDL2main -lSDL2  (Build)
