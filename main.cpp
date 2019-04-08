@@ -1,0 +1,28 @@
+// continuing from feb 25
+// -static in build commands says you want libraries in executable
+
+#include "SDL.h"
+#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <sstream>
+#include <iomanip>
+#include <time.h>
+
+#include "game.h"
+#include "image.h"
+#include "animation.h"
+#include "sprite.h"
+#include "myGame.h"
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+	Game* g;
+	g = new MyGame();
+	g->run();
+	delete g;
+	return 0;
+}
