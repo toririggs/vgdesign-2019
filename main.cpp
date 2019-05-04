@@ -1,6 +1,3 @@
-// continuing from feb 25
-// -static in build commands says you want libraries in executable
-
 #include "SDL.h"
 #include <stdio.h>
 #include <iostream>
