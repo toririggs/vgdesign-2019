@@ -1,3 +1,4 @@
+
 #OBJS specifies which files to compile as part of the project
 OBJS = main.cpp animation.h game.h myGame.h image.h sprite.h level.h
 
@@ -17,3 +18,4 @@ OBJ_NAME = game
 #This is the target that compiles our executable
 all : $(OBJS)
 	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
+
