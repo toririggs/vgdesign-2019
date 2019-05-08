@@ -9,7 +9,7 @@ CC = g++
 COMPILER_FLAGS = -w
 
 #LINKER_FLAGS specifies the libraries we're linking against
-LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2.dll -lSDL2_mixer.dll
+LINKER_FLAGS =  -lSDL2main -lSDL2 
 
 #OBJ_NAME specifies the name of our exectuable
 OBJ_NAME = game
