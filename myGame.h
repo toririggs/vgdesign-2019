@@ -78,7 +78,7 @@ class MyGame:public Game {
 		sphere = new Image (this, "pbs1.bmp", 61, 61);
 		for (int i = 0; i < numWalls; i++) wallImages[i] = new Image (this, "tempwall.bmp", 70, 70);
 		goal = new Image (this, "hole.bmp", 0, 0);
-		endScreen = new Image (this, "temp.bmp", 0, 0);
+		endScreen = new Image (this, "endScreen.bmp", 0, 0);
 		nextScreen = new Image (this, "nextlevelscreen.bmp", 0, 0);
 		replay = new Image (this, "replayArrow.bmp", 0, 0);
 		menu = new Image (this, "menuicon.bmp", 0, 0);
