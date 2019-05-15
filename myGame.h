@@ -19,7 +19,7 @@
 using namespace std;
 
 class MyGame:public Game {
-	Image *background, *grid, *gev, *geh, *b1, *b2, *b3, *b4, *b5, *b6, *sphere, *goal, *endScreen, *nextScreen;
+	Image *background, *grid, *gev, *geh, *b1, *b2, *b3, *b4, *b5, *b6, *sphere, *goal, *endScreen, *nextScreen, *replay, *menu, *nextArrow;
 	Image *wallImages[10];
 	pair<int, int> walls[10];
 	int count = 0;
@@ -78,8 +78,11 @@ class MyGame:public Game {
 		sphere = new Image (this, "pbs1.bmp", 61, 61);
 		for (int i = 0; i < numWalls; i++) wallImages[i] = new Image (this, "tempwall.bmp", 70, 70);
 		goal = new Image (this, "hole.bmp", 0, 0);
-		endScreen = new Image (this, "temp.bmp", 0, 0);
-		nextScreen = new Image (this, "nexttemp.bmp", 0, 0);
+		endScreen = new Image (this, "endScreen.bmp", 0, 0);
+		nextScreen = new Image (this, "nextlevelscreen.bmp", 0, 0);
+		replay = new Image (this, "replayArrow.bmp", 0, 0);
+		menu = new Image (this, "menuicon.bmp", 0, 0);
+		nextArrow = new Image (this, "nextarrow.bmp", 0, 0);
 		for (int i=0;i<2;i++) {
 			Sprite *ball=new Sprite(this,"",7,10);
 			sprites.push_back(ball);
@@ -157,9 +160,18 @@ class MyGame:public Game {
 			bool next = false;
 			SDL_Renderer *renderer=getRenderer();
 			nextScreen->render(this);
+			replay->render(this, 275, 400);
+			menu->render(this, 575, 400);
+			nextArrow->render(this, 875, 400);
 			SDL_RenderPresent(renderer);
 			SDL_Event event;
-			while (!next) if (SDL_PollEvent(&event)) if (event.key.keysym.sym==SDLK_SPACE) next = true;
+			while (!next) {
+				if (SDL_PollEvent(&event)) {
+					if (event.key.keysym.sym==SDLK_n) next = true;
+					if (event.key.keysym.sym==SDLK_r) {levelnum--; next = true;}
+					// if (even.key.keysym.sym==SDLK_m) {add functionality to return to main menu;}
+				}
+			}
 			return true;
 		}
 		else return false;
